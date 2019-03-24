@@ -1,0 +1,52 @@
+<div fxLayout="row wrap" fxLayoutGap="5px">
+  <mat-form-field fxFlex="25%" fxFlex.md="25%" fxFlex.xs="100%">
+    <input matInput placeholder="Current Shift">
+  </mat-form-field>
+  <mat-form-field fxFlex="25%" fxFlex.md="25%" fxFlex.xs="100%">
+    <input matInput placeholder="Current Day">
+  </mat-form-field>
+  <mat-form-field fxFlex="25%" fxFlex.md="25%" fxFlex.xs="100%">
+    <input matInput placeholder="Current Week">
+  </mat-form-field>
+  <mat-form-field fxFlex="25%" fxFlex.md="25%" fxFlex.xs="100%">
+    <input matInput placeholder="Custom Date">
+  </mat-form-field>
+</div>
+<div style="clear: both;"></div>
+<div>
+  <table mat-table [dataSource]="dataSource" matSort style="width: 100%">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="systemId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td *matCellDef="let element">{{element.systemId}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="dt">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>DT</th>
+      <td *matCellDef="let element">{{element.dt}}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="pp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>PP</th>
+      <td *matCellDef="let element">{{element.pp}}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="qf">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>QF</th>
+      <td *matCellDef="let element">{{element.qf}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="oee">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>OEE</th>
+      <td *matCellDef="let element">{{element.oee}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>

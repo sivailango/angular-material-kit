@@ -1,0 +1,58 @@
+<div>
+  <form [formGroup]="dtForm" (ngSubmit)="onSubmit()">
+    <div fxLayout fxLayoutGap="10px">
+      <mat-form-field>
+        <input matInput placeholder="Date" formControlName="date">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Shift</mat-label>
+        <select matNativeControl>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div fxLayout fxLayoutGap="10px">
+      <mat-form-field fxFlex="100%">
+        <mat-label>Machine</mat-label>
+        <select matNativeControl>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div fxLayout fxLayoutGap="10px">
+      <mat-label>Planned?&nbsp;&nbsp;</mat-label>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">No</mat-radio-button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-radio-button value="2">Yes</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <p></p>
+    <div fxLayout fxLayoutGap="10px">
+      <mat-form-field>
+        <input matInput placeholder="Start Time" formControlName="startTime">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="End Time" formControlName="endTime">
+      </mat-form-field>
+    </div>
+    <div fxLayout fxLayoutGap="10px">
+      <mat-form-field fxFlex="100%">
+        <input matInput placeholder="Reason" formControlName="reason">
+      </mat-form-field>
+    </div>
+    <div fxLayout fxLayoutGap="10px">
+      <mat-form-field fxFlex="100%">
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button color="primary">Save</button>
+    </div>
+  </form>
+</div>

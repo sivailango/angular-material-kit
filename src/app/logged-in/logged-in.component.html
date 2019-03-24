@@ -1,0 +1,21 @@
+<mat-sidenav-container fullscreen hasBackdrop="true">
+  <mat-sidenav #sidenav mode="over" closed>
+    <mat-nav-list>
+      <h2 matSubheader>MENU</h2>
+      <a *ngFor="let sm of sideMenus" mat-list-item  routerLink="{{sm.path}}" (click)="sidenav.toggle()">
+        <mat-icon>{{sm.icon}}</mat-icon> <span class="nav-caption">{{sm.label}}</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <mat-toolbar>
+        <mat-icon (click)="sidenav.toggle()" style="cursor: pointer;">menu</mat-icon>&nbsp;
+        <span>
+            My Application
+        </span>
+      </mat-toolbar>
+      <div style="padding: 15px">
+        <router-outlet></router-outlet>
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
